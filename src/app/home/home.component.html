@@ -1,0 +1,22 @@
+<h2 setBackground [backColor] = "'#36363b'" [textColor]="'white'" >From Home</h2>
+<p>Message: {{message |uppercase}}</p>
+<div *ngFor="let user of signupUser">
+  {{user.userName}}
+</div>
+<div  class="cards">
+    <div class="item-card" *ngFor="let item of foodItems" [disableProd]="!item.inStock">
+        <img [src]="item.image" [alt]="item.name">
+        <div class="cardContent">
+          <h3>{{ item.name | uppercase }}</h3>
+          <div class="priceRating" [disableProd]="!item.inStock">
+            <p id="price"><span>{{ item.price | currency:'INR' }}</span></p>
+            <p id="rating">Rating: <span>{{ item.rating }}</span></p>
+            <p id="inStock">Available: <span>{{ item.inStock? "Yes": "No" }}</span></p>
+          </div>
+        </div>
+        <div class="card-button">
+          <button mat-raised-button color="warn" >More Detail</button>
+          <button mat-raised-button color="warn" >Buy</button>
+        </div>
+      </div>
+</div>

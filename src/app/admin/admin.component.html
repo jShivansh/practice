@@ -1,0 +1,64 @@
+<div class="container">
+    <h1>Admin</h1>
+    <div class="component1">
+        <div class="form">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="userName">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Gender</mat-label>
+                <mat-select [(ngModel)]="gender">
+                  <mat-option value="Male">Male</mat-option>
+                  <mat-option value="Female">Female</mat-option>
+                </mat-select>
+              </mat-form-field><br>
+              <mat-form-field appearance="outline">
+                <mat-label>Subscription Type</mat-label>
+                <mat-select [(ngModel)]="subType">
+                  <mat-option value="yearly">Yearly</mat-option>
+                  <mat-option value="quaterly">Quaterly</mat-option>
+                  <mat-option value="monthly">Monthly</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Status</mat-label>
+                <mat-select [(ngModel)]="userStatus">
+                  <mat-option value="active">Active</mat-option>
+                  <mat-option value="inactive">Inactive</mat-option>
+                </mat-select>
+              </mat-form-field><br>
+              <button mat-raised-button color="accent" (click)="addUser()">Submit</button>
+        </div>
+    </div>
+    <div class="component2" >
+        <!-- <div *ngFor="let user of users">
+            {{user.name}} | {{user.gender}} | {{user.subType}} | {{user.userStatus}}
+        </div> -->
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!-- Define columns -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let user">{{ user.name }}</td>
+            </ng-container>
+            <ng-container matColumnDef="gender">
+                <th mat-header-cell *matHeaderCellDef>Gender</th>
+                <td mat-cell *matCellDef="let user">{{ user.gender }}</td>
+            </ng-container>
+            <ng-container matColumnDef="subType">
+                <th mat-header-cell *matHeaderCellDef>Subscription Type</th>
+                <td mat-cell *matCellDef="let user">{{ user.subType }}</td>
+            </ng-container>
+            <ng-container matColumnDef="userStatus">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let user">{{ user.userStatus }}</td>
+            </ng-container>
+    
+            <!-- Define header row -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <!-- Define row content -->
+            <tr mat-row *matRowDef="let user; columns: displayedColumns;"></tr>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="video-background">
+    <video autoplay loop muted>
+      <source src="../assets/movie.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- Your content goes here -->
+    <div class="otherContent">
+        <!-- <div class="formContainer" >
+            <h2>Welcome to Login</h2>
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form">
+                <input type="text" formControlName="name" placeholder="Name" appHighlight>
+                <input type="email" formControlName="email" placeholder="Email" appHighlight>
+                <button type="submit" 
+                        appHighlight 
+                        setBackground [backColor] = "'#36363b'" [textColor]="'white'"
+                        routerLink="/home"
+                        >
+                    Submit
+                </button>
+            </form>
+        </div> -->
+        <!--  -->
+        <div class="main">  	
+            <input type="checkbox" id="chk" aria-hidden="true">
+    
+                <div class="signup">
+                    <form>
+                        <label for="chk" aria-hidden="true">Sign up</label>
+                        <input type="text" name="txt" placeholder="User name" [(ngModel)]="signupObj.userName" required>
+                        <input type="email" name="email" placeholder="Email" [(ngModel)]="signupObj.email">
+                        <input type="password" name="pswd" placeholder="Password" [(ngModel)]="signupObj.password">
+                        <button (click)="onSignUp()">Sign up</button>
+                    </form>
+                </div>
+    
+                <div class="login">
+                    <form>
+                        <label for="chk" aria-hidden="true">Login</label>
+                        <input type="email" name="email" placeholder="Email" [(ngModel)]="loginObj.email">
+                        <input type="password" name="pswd" placeholder="Password" [(ngModel)]="loginObj.password">
+                        <button (click)="onLogin()">Login</button>
+                    </form>
+                </div>
+        </div>
+        
+    </div>
+  </div>
+
+

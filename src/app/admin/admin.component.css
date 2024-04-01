@@ -1,0 +1,41 @@
+.container{
+    padding: 1em;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column; */
+}
+
+.container h1{
+    width: 100%;
+    color: #28282b;
+    font-weight: bolder;
+    text-align: left;
+    padding-left: 1em;
+}
+
+.component1{
+    background-color: darkgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-top: 1em;
+}
+.component1 button{
+    width: 100%;
+}
+.mat-form-field {
+    background-color: white;
+    padding: 0.5em 1em;
+}
+
+/* Set background color of select options */
+.mat-option {
+    background-color: white;
+}
+
+table {
+    width: 100%;
+  }
